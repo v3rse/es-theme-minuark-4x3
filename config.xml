@@ -1,0 +1,10 @@
+<theme>
+    <formatVersion>4</formatVersion>
+
+    <!-- Media shown alongside the MinUI game list -->
+
+    <include subset="Media" name="Video panel" displayName="Video panel">./options/media/video-panel.xml</include>
+    <include subset="Media" name="Art panel" displayName="Art panel">./options/media/art-panel.xml</include>
+    <include subset="Media" name="Art backdrop" displayName="Art backdrop">./options/media/art-backdrop.xml</include>
+    <include subset="Media" name="Off" displayName="Off (plain MinUI)">./options/media/off.xml</include>
+</theme>

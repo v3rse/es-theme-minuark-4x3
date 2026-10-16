@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+	<formatVersion>7</formatVersion>
+	<variables>
+		<!-- list left, static boxart/screenshot panel right (no video) -->
+		<mediaVideoVisible>false</mediaVideoVisible>
+		<mediaVideoPos>0.78 0.47</mediaVideoPos>
+		<mediaVideoMaxSize>0.4 0.5</mediaVideoMaxSize>
+
+		<mediaImageVisible>true</mediaImageVisible>
+		<mediaImagePos>0.78 0.47</mediaImagePos>
+		<mediaImageSize>0.4 0.45</mediaImageSize>
+		<mediaImageTint>ffffff</mediaImageTint>
+		<mediaImageOrigin>0 0</mediaImageOrigin>
+
+		<listPos>0.045 0.1</listPos>
+		<listSize>0.53 0.78</listSize>
+		<listFontSize>0.045</listFontSize>
+		<listLineSpacing>1.8</listLineSpacing>
+		<listMargin>0.055</listMargin>
+		<listSelectorHeight>0.115</listSelectorHeight>
+		<listSelectorWidth>1</listSelectorWidth>
+	</variables>
+</theme>

@@ -1,14 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-es-theme-minuark-4x3 from offalynne  github.com/offalynne/es-theme-minuark-4x3
-based on es-theme-MinUArk by vidnez  github.com/Vidnez/es-theme-MinUArk
-derivative of 'MinUI' by shauninman  github.com/shauninman/MinUI
+es-theme-minuark-4x3-media
+  MinUI look for 4:3 / 640x480, with game media.
+  Fork of es-theme-minuark-4x3 by offalynne (github.com/offalynne/es-theme-minuark-4x3),
+  which is a 4:3 rewrite of es-theme-MinUArk by Vidnez,
+  which is a port of MinUI by Shaun Inman.
+  License: CC-BY-NC-SA (inherited)
+
+  Media modes are selectable in ES: Start > UI Settings > Theme Configuration > Media.
+  Video/art geometry follows the pattern proven on this device by RetroDark.
 
 -->
-
-<?xml version="1.0" encoding="UTF-8"?>
 <theme>
 <formatVersion>7</formatVersion>
+
+<variables>
+  <!-- Media mode defaults = "Video panel". Overridden by ./options/media/*.xml -->
+  <mediaVideoVisible>true</mediaVideoVisible>
+  <mediaVideoPos>0.78 0.47</mediaVideoPos>
+  <mediaVideoMaxSize>0.4 0.5</mediaVideoMaxSize>
+
+  <mediaImageVisible>false</mediaImageVisible>
+  <mediaImagePos>0.78 0.47</mediaImagePos>
+  <mediaImageSize>0.4 0.45</mediaImageSize>
+  <mediaImageTint>ffffff</mediaImageTint>
+  <mediaImageOrigin>0 0</mediaImageOrigin>
+
+  <!-- Gamelist geometry (this set leaves the right side free for media) -->
+  <listPos>0.045 0.1</listPos>
+  <listSize>0.53 0.78</listSize>
+  <listFontSize>0.045</listFontSize>
+  <listLineSpacing>1.8</listLineSpacing>
+  <listMargin>0.055</listMargin>
+  <listSelectorHeight>0.115</listSelectorHeight>
+  <listSelectorWidth>1</listSelectorWidth>
+</variables>
+
+<include name="Configs">./config.xml</include>
 
 <!-- System View (List Categories) -->
 <view name="system">
@@ -59,7 +88,31 @@ derivative of 'MinUI' by shauninman  github.com/shauninman/MinUI
   <pos>0 0</pos>
   <size>1 1</size>
   <path>./bg-games.png</path>
+  <zIndex>0</zIndex>
+</image>
+
+<!-- Game media: video, or its snapshot image when no video exists -->
+<video name="md_video">
+  <visible>${mediaVideoVisible}</visible>
+  <origin>0.5 0.5</origin>
+  <pos>${mediaVideoPos}</pos>
+  <maxSize>${mediaVideoMaxSize}</maxSize>
+  <delay>1</delay>
+  <effect>none</effect>
+  <showSnapshotNoVideo>true</showSnapshotNoVideo>
+  <showSnapshotDelay>true</showSnapshotDelay>
+  <snapshotSource>image</snapshotSource>
   <zIndex>2</zIndex>
+</video>
+
+<!-- Game media: static art (panel), or dimmed full-screen backdrop -->
+<image name="md_image">
+  <visible>${mediaImageVisible}</visible>
+  <pos>${mediaImagePos}</pos>
+  <size>${mediaImageSize}</size>
+  <origin>${mediaImageOrigin}</origin>
+  <color>${mediaImageTint}</color>
+  <zIndex>1</zIndex>
 </image>
 
 <!-- Category List -->
@@ -70,21 +123,22 @@ derivative of 'MinUI' by shauninman  github.com/shauninman/MinUI
   <secondaryColor>f7fbf7</secondaryColor>
   <fontPath>./BPreplayBold-unhinted.otf</fontPath>
   <backgroundCornerSize>1 1</backgroundCornerSize>
-  <fontSize>.051</fontSize>
-  <pos>0.00 0.058</pos>
-  <size>0.8546875 0.8</size>
+  <fontSize>${listFontSize}</fontSize>
+  <pos>${listPos}</pos>
+  <size>${listSize}</size>
   <alignment>left</alignment>
-  <horizontalMargin>0.071875</horizontalMargin>
+  <horizontalMargin>${listMargin}</horizontalMargin>
   <origin>0 0</origin>
-  <lineSpacing>1.85</lineSpacing>
+  <lineSpacing>${listLineSpacing}</lineSpacing>
   <selectorImagePath>./selector.png</selectorImagePath>
   <selectorOffsetY>-0.01</selectorOffsetY>
-  <selectorHeight>0.125</selectorHeight>
-  <selectorWidth>1</selectorWidth>
+  <selectorHeight>${listSelectorHeight}</selectorHeight>
+  <selectorWidth>${listSelectorWidth}</selectorWidth>
+  <zIndex>3</zIndex>
 </textlist>
 
 <!-- Category Misc (Hide) -->
-<text name="md_lbl_genre, md_genre, md_lbl_rating, md_lbl_developer, md_lbl_publisher, md_publisher, md_lbl_lastplayed, md_lbl_playcount, md_playcount, md_lbl_releasedate"><visible>false</visible></text>
+<text name="md_lbl_genre, md_genre, md_lbl_rating, md_lbl_developer, md_lbl_publisher, md_publisher, md_lbl_lastplayed, md_lbl_playcount, md_playcount, md_lbl_releasedate, md_description"><visible>false</visible></text>
 <rating name="md_rating"><visible>false</visible></rating>
 <image name="md_thumbnail"><visible>false</visible></image>
 

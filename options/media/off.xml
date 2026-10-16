@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+	<formatVersion>7</formatVersion>
+	<variables>
+		<!-- no media at all: exactly the upstream MinUI layout -->
+		<mediaVideoVisible>false</mediaVideoVisible>
+		<mediaVideoPos>0.5 0.5</mediaVideoPos>
+		<mediaVideoMaxSize>0.4 0.5</mediaVideoMaxSize>
+
+		<mediaImageVisible>false</mediaImageVisible>
+		<mediaImagePos>0 0</mediaImagePos>
+		<mediaImageSize>1 1</mediaImageSize>
+		<mediaImageTint>ffffff</mediaImageTint>
+		<mediaImageOrigin>0 0</mediaImageOrigin>
+
+		<listPos>0 0.058</listPos>
+		<listSize>0.8546875 0.8</listSize>
+		<listFontSize>0.051</listFontSize>
+		<listLineSpacing>1.85</listLineSpacing>
+		<listMargin>0.071875</listMargin>
+		<listSelectorHeight>0.125</listSelectorHeight>
+		<listSelectorWidth>1</listSelectorWidth>
+	</variables>
+</theme>
